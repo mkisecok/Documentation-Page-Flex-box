@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>
+            <h1>Flex Box Container Properties</h1>
+        </header>
+
+        <div id="links">
+            <span id="closeX" style="color: gray;">x</span>
+
+            <a href="#display" class="nav-link">display</a>
+            <a href="#flex_direction" class="nav-link">flex-direction</a>
+            <a href="#flex_wrap" class="nav-link">flex-wrap</a>
+            <a href="#flex_flow" class="nav-link">flex-flow</a>
+            <a href="#justify_content" class="nav-link">justify-content</a>
+            <a href="#align_items" class="nav-link">align-items</a>
+            <a href="#align_content" class="nav-link">align-content</a>
+            <a href="#gap" class="nav-link">gap</a>
+        </div>
+    </nav>
+    <main id="main-doc">
+        <button id="openBtn"> ☰ Open Navigation</button>
+        <section class="main-section" id="display">
+            <header>
+                <h3> <i class="far fa-star"></i> display</h3>
+            </header>
+            <img src="./images/flex-parent-child.png" alt="flex-container">
+
+            <p>This defines a flex container; inline or block depending on the given value.It enables a flex context for
+                all its direct children.</p>
+
+            <code> .container { <br>
+                display: flex; /* or inline-flex */ <br>
+              } </code>
+            <br><br>
+
+
+            <p> <i class="fas fa-exclamation"></i> Note that CSS columns have no effect on a flex container.</p>
+
+        </section>
+        <section class="main-section" id="flex_direction">
+            <header>
+                <h3> <i class="far fa-star"></i> flex-direction</h3>
+            </header>
+            <img src="./images/flex-direction.jpg" alt="flex-direction">
+
+            <p>This establishes the main-axis, thus defining the direction flex items are placed in the flex container.
+                Flexbox is (aside from optional wrapping) a single-direction layout concept.</p>
+            <p>Think of flex items as primarily laying out either in horizontal rows or vertical columns.</p>
+            <code>
+                .container { <br>
+                    flex-direction: row | row-reverse | column | column-reverse; <br>
+                  }
+            </code>
+            <ul>
+                <li><strong>row (default):</strong> left to right in ltr; right to left in rtl</li>
+                <li><strong>row-reverse:</strong> right to left in ltr; left to right in rtl</li>
+                <li><strong>column:</strong> same as row but top to bottom</li>
+                <li><strong>column-reverse:</strong> same as row-reverse but bottom to top</li>
+            </ul>
+
+
+        </section>
+        <section class="main-section" id="flex_wrap">
+            <header>
+                <h3> <i class="far fa-star"></i> flex-wrap</h3>
+            </header>
+            <img src="./images/flex-wrap.png" alt="">
+
+            <p>By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap
+                as needed with this property.</p>
+            <p>There are some <a href="https://css-tricks.com/almanac/properties/f/flex-wrap/">visual demos of flex-wrap
+                    here.</a></p>
+            <code>
+                .container { <br>
+                    flex-wrap: nowrap | wrap | wrap-reverse; <br>
+                  }
+            </code>
+            <ul>
+                <li><strong>nowrap (default):</strong> all flex items will be on one line</li>
+                <li><strong>wrap:</strong> flex items will wrap onto multiple lines, from top to bottom.</li>
+                <li><strong>wrap-reverse:</strong> flex items will wrap onto multiple lines from bottom to top.</li>
+            </ul>
+
+        </section>
+        <section class="main-section" id="flex_flow">
+            <header>
+                <h3> <i class="far fa-star"></i> flex-flow</h3>
+            </header>
+
+            <p>This is a shorthand for the flex-direction and flex-wrap properties, which together define the flex
+                container’s main and cross axes.</p>
+            <p>The default value is row nowrap.</p>
+            <code>
+                .container { <br>
+                    flex-flow: column wrap; <br>
+                  }
+            </code>
+        </section>
+        <section class="main-section" id="justify_content">
+            <header>
+                <h3> <i class="far fa-star"></i> justify-content</h3>
+            </header>
+            <img src="./images/justify-content.png" alt="justify-content">
+
+
+            <p>This defines the alignment along the main axis. It helps distribute extra free space leftover when either
+                all the flex items on a line are inflexible, or are flexible but have reached their maximum size.</p>
+            <p>It also exerts some control over the alignment of items when they overflow the line.</p>
+            <code>
+                .container { <br>
+                    justify-content: flex-start | flex-end | center | space-between | space-around |<br> space-evenly | start | end | left | right ... + safe | unsafe;<br>
+                  }<br>
+            </code>
+            <ul>
+                <li><strong>flex-start (default): </strong>items are packed toward the start of the flex-direction.</li>
+                <li><strong>flex-end: </strong>items are packed toward the end of the flex-direction.</li>
+                <li><strong>start:</strong> items are packed toward the start of the writing-mode direction.</li>
+                <li><strong>end: </strong>items are packed toward the end of the writing-mode direction.</li>
+                <li><strong>left:</strong> items are packed toward left edge of the container, unless that doesn’t make sense with the
+                    flex-direction, then it behaves like start.</li>
+                <li><strong>right: </strong>items are packed toward right edge of the container, unless that doesn’t make sense with the
+                    flex-direction, then it behaves like end.</li>
+                <li><strong>center:</strong> items are centered along the line</li>
+                <li><strong>space-between:</strong> items are evenly distributed in the line; first item is on the start line, last item
+                    on the end line</li>
+                <li><strong>space-around:</strong> items are evenly distributed in the line with equal space around them. Note that
+                    visually the spaces aren’t equal, since all the items have equal space on both sides. The first item
+                    will have one unit of space against the container edge, but two units of space between the next item
+                    because that next item has its own spacing that applies.</li>
+                <li><strong>space-evenly:</strong> items are distributed so that the spacing between any two items (and the space to the
+                    edges) is equal.</li>
+            </ul>
+            <p> <i class="fas fa-exclamation"></i> Note that that browser support for these values is nuanced. For
+                example, space-between never got support from some versions of Edge, and start/end/left/right aren’t in
+                Chrome yet. The safest values are flex-start, flex-end, and center.</p>
+        </section>
+
+        <section class="main-section" id="align_items">
+            <header>
+                <h3> <i class="far fa-star"></i> align-items</h3>
+            </header>
+            <img src="./images/align-items.png" alt="align-items">
+
+
+            <p>This defines the default behavior for how flex items are laid out along the cross axis on the current
+                line. Think of it as the justify-content version for the cross-axis (perpendicular to the main-axis).
+            </p>
+            <code>
+                .container { <br>
+                    align-items: stretch | flex-start | flex-end | center | baseline | first baseline | <br> last baseline | start | end | self-start | self-end + ... safe | unsafe; <br>
+                  }
+            </code>
+            <ul>
+                <li><strong>stretch (default): </strong>stretch to fill the container (still respect min-width/max-width)</li>
+                <li><strong>flex-start / start / self-start:</strong> items are placed at the start of the cross axis. The difference
+                    between these is subtle, and is about respecting the flex-direction rules or the writing-mode rules.
+                </li>
+                <li><strong>flex-end / end / self-end: </strong>items are placed at the end of the cross axis. The difference again is
+                    subtle and is about respecting flex-direction rules vs. writing-mode rules.</li>
+                <li><strong>center: </strong>items are centered in the cross-axis</li>
+                <li><strong>baseline:</strong> items are aligned such as their baselines align</li>
+            </ul>
+            <p>The safe and unsafe modifier keywords can be used in conjunction with all the rest of these keywords
+                (although note browser support), and deal with helping you prevent aligning elements such that the
+                content becomes inaccessible.</p>
+
+        </section>
+        <section class="main-section" id="align_content">
+            <header>
+                <h3> <i class="far fa-star"></i> align-content</h3>
+            </header>
+            <img src="./images/align-content.png" alt="align-content">
+            <p>This aligns a flex container’s lines within when there is extra space in the cross-axis, similar to how
+                justify-content aligns individual items within the main-axis.</p>
+            <p>Note: This property only takes effect on multi-line flexible containers, where flex-wrap is set to either
+                wrap or wrap-reverse). A single-line flexible container (i.e. where flex-wrap is set to its default
+                value, no-wrap) will not reflect align-content.</p>
+            <code>
+                .container {<br>
+                    align-content: flex-start | flex-end | center | space-between | space-around | space-evenly <br>| stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;<br>
+                  }
+            </code>
+            <ul>
+                <li><strong>normal (default): </strong>items are packed in their default position as if no value was set.</li>
+                <li><strong>flex-start / start:</strong> items packed to the start of the container. The (more supported) flex-start
+                    honors the flex-direction while start honors the writing-mode direction.</li>
+                <li><strong>flex-end / end:</strong> items packed to the end of the container. The (more support) flex-end honors the
+                    flex-direction while end honors the writing-mode direction.</li>
+                <li><strong>center: </strong>items centered in the container</li>
+                <li><strong>space-between:</strong> items evenly distributed; the first line is at the start of the container while the
+                    last one is at the end</li>
+                <li><strong>space-around:</strong> items evenly distributed with equal space around each line</li>
+                <li><strong>space-evenly:</strong> items are evenly distributed with equal space around them</li>
+                <li><strong>stretch:</strong> lines stretch to take up the remaining space </li>
+            </ul>
+
+            <p> <i class="fas fa-exclamation"></i> Note: This property only takes effect on multi-line flexible
+                containers, where flex-wrap is set to either wrap or wrap-reverse). A single-line flexible container
+                (i.e. where flex-wrap is set to its default value, no-wrap) will not reflect align-content.</p>
+
+        </section>
+        <section class="main-section" id="gap">
+            <header>
+                <h3> <i class="far fa-star"></i> gap</h3>
+            </header>
+            <img src="./images/gap.png" alt="gap">
+            <p>The gap property explicitly controls the space between flex items. It applies that spacing only between
+                items not on the outer edges.
+            </p>
+            <code>
+                .container {<br>
+                    display: flex;<br>
+                    ...<br>
+                    gap: 10px;<br>
+                    gap: 10px 20px; /* row-gap column gap */<br>
+                    row-gap: 10px;<br>
+                    column-gap: 20px;<br>
+                  }
+            </code>
+
+            <p>The behavior could be thought of as a minimum gutter, as if the gutter is bigger somehow (because of
+                something like justify-content: space-between;) then the gap will only take effect if that space would
+                end up smaller. It is not exclusively for flexbox, gap works in grid and multi-column layout as well.
+            </p>
+
+        </section>
+    </main>
+    <script src="./index.js"></script>
+</body>
+
+</html>

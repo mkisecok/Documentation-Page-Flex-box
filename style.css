@@ -1,0 +1,113 @@
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: auto;
+  max-width: 820px;
+  min-width: 320px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body header h1 {
+  margin: 20px;
+}
+
+body #links {
+  height: 100%;
+  width: 250px;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+body #links #closeX {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  font-size: 36px;
+  direction: rtl;
+  cursor: pointer;
+}
+
+body #links a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body #links a:hover {
+  color: #f1f1f1;
+}
+
+@media (max-height: 450px) {
+  body #links {
+    padding-top: 15px;
+  }
+  body #links a {
+    font-size: 18px;
+  }
+}
+
+body #main-doc {
+  padding: 16px;
+}
+
+body #main-doc #openBtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #1055af;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  visibility: hidden;
+}
+
+body #main-doc #openBtn:hover {
+  background-color: #404621;
+}
+
+@media (min-width: 720px) {
+  body #main-doc #openBtn {
+    visibility: visible;
+  }
+}
+
+body #main-doc h3 {
+  color: darkblue;
+  margin: 10px 0;
+}
+
+body #main-doc h3 i {
+  color: red;
+  font-size: 24px;
+  display: inline;
+}
+
+body #main-doc p i {
+  color: red;
+  font-size: 24px;
+  display: inline;
+}
+
+body #main-doc code {
+  font-family: Consolas,"courier new";
+  color: crimson;
+  background-color: #f1f1f1;
+  padding: 2px;
+  font-size: 105%;
+}
+
+body img {
+  display: block;
+  margin: 20px auto;
+}
+/*# sourceMappingURL=style.css.map */
